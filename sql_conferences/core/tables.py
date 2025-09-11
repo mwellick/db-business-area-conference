@@ -6,7 +6,6 @@ class CreateTables:
         self.connection = connection
         self.cursor = cursor
 
-
     def create_tables(self):
         try:
             queries = [
@@ -71,5 +70,3 @@ class CreateTables:
             print("Tables created successfully! ")
         except psycopg2.Error as e:
             print(f"Error occured during creating tables: {e}")
-
-
