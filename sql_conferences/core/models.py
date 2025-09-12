@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from datetime import date, datetime
 
-
 """
 
 These dataclasses are almost  useless  & aren't used in this code yet
@@ -9,9 +8,6 @@ They are created for better db structure understanding and may ne useful for  fu
 scalability :)
  
 """
-
-
-
 
 
 @dataclass
