@@ -9,7 +9,8 @@ def speaker_can_perform(cursor, speaker_id, section_id, start_time) -> None:
               AND section_id = %s
               AND DATE (start_time) = %s;
             """
-    cursor.execute(query, (speaker_id, section_id, start_time))
+    date_only = start_time.date()
+    cursor.execute(query, (speaker_id, section_id, date_only))
     if cursor.fetchone()[0]:
         raise Exception("Speaker has already performed in this section today")
 

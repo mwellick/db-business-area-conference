@@ -1,4 +1,4 @@
-from .constraints import speaker_can_perform, hall_availability
+from sql_conferences.crud.constraints import speaker_can_perform, hall_availability
 
 
 class InsertData:
