@@ -23,11 +23,12 @@ class ConferenceSpeakerReport:
     full_name: str
     workplace: str
     position: str
+    conference_name: str
 
 
 @dataclass
 class ConferenceEquipmentReport:
-    conference_name: str
     equipment_name: str
     section_hall: str
     start_time: datetime
+    conference_name: str

@@ -55,10 +55,10 @@ class Report:
                    p.start_time,
                 c.name AS conference_name
             FROM PresentationEquipment AS pe
-                     JOIN Presentation AS p ON pe.id = p.id
+                     JOIN Presentation AS p ON pe.presentation_id = p.id
                      JOIN Section AS s ON p.section_id = s.id
                      JOIN Equipment AS e ON pe.equipment_id = e.id
-                     JOIN Conference AS c ON c.id = s.cconference_id
+                     JOIN Conference AS c ON c.id = s.conference_id
             """
         ]
 
