@@ -13,6 +13,7 @@ class Report:
 
     def create_views(self):
         queries = [
+            # Create conference schedule report
             """
             CREATE
             OR REPLACE VIEW conference_schedule AS
@@ -33,7 +34,7 @@ class Report:
                      JOIN Presentation AS p ON p.section_id = s.id
                      JOIN Speaker AS sp ON sp.id = p.speaker_id;
             """,
-
+            # Conference speakers report
             """
             CREATE
             OR REPLACE VIEW conference_speakers AS
@@ -46,7 +47,7 @@ class Report:
                      JOIN Section AS s ON p.section_id = s.id
                      JOIN Conference AS c ON c.id = s.conference_id;
             """,
-
+            # Equipment needed for conf report
             """
             CREATE
             OR REPLACE VIEW equipment_needed AS
