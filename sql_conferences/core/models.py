@@ -4,7 +4,7 @@ from datetime import date, datetime
 """
 
 These dataclasses are almost  useless  & aren't used in this code yet
-They are created for better db structure understanding and may ne useful for  future
+They are created for better db structure & self understanding and may be useful for future
 scalability :)
  
 """
