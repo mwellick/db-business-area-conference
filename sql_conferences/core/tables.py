@@ -15,7 +15,8 @@ class CreateTables:
                     name VARCHAR(255) NOT NULL,
                     start_date DATE NOT NULL,
                     end_date DATE NOT NULL,
-                    building VARCHAR(64) NOT NULL
+                    building VARCHAR(64) NOT NULL,
+                    UNIQUE (name, start_date)
                 );
                 """,
                 """
@@ -67,6 +68,6 @@ class CreateTables:
                 self.cursor.execute(query)
 
             self.connection.commit()
-            print("Tables created successfully! ")
+            print("Tables created successfully!")
         except psycopg2.Error as e:
             print(f"Error occured during creating tables: {e}")
