@@ -5,8 +5,6 @@ from sql_conferences.scripts.init_db import init_db, init_tables
 def run_seed(connection, cursor):
     seed_data(connection, cursor)
     connection.commit()
-
-    print(connection.dsn)
     print("Seed data inserted successfully.")
 
 
@@ -16,6 +14,7 @@ if __name__ == "__main__":
     try:
         init_tables(engine.connection, engine.cursor)
         run_seed(engine.connection, engine.cursor)
-        print("Seed data inserted successfully.")
+    except Exception as e:
+        raise f"Error occuered: {e}"
     finally:
         engine.close()
