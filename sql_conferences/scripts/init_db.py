@@ -22,7 +22,13 @@ def init_db():
     )
 
     # Initialize db if it does not exist yet (If it's already exists - exception will be raised)
-    db_engine.create_db()
+    try:
+        db_engine.create_db()
+    except Exception as e:
+        if "уже существует" in str(e):
+            print("This db already exists, skipping creation")
+        else:
+            raise e
 
     # Connection to db
     db_engine.connect()
